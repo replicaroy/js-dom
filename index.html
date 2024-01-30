@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+        }
+    </style>
+</head>
+<body>
+    <!-- Qs.1  Create a H2 heading element with text - “Hello JavaScript”. And this “from Jaipur
+    police” to this text using JS. Output:-Hello JavaScript from Jaipur police// -->
+
+    <h1 class="h1">'Hello Javascript</h1>
+
+
+
+    <!-- Qs.2 Create 3 divs with common class name - “box”.Access them & add some unique text to Each of them.
+    Output: -unique text box1 
+    Output: -unique text box2 
+    Output: -unique text box3    -->
+
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    
+    
+</body>
+
+<script>
+    // Ans. 1//
+    let value = document.querySelector(".h1")   
+    value.innerHTML += ` from jaipur police'`
+    value.style.color = 'darkgreen'
+    value.style.border = '1px solid gray'    
+    value.style.padding = '20px'
+
+    //Ans. 2// 
+
+    let value1 = document.querySelectorAll(".box")
+    // let names = 'john'
+    let d = value1.forEach(function(value, index){
+    value.innerHTML = ` <h1> unique text box ${index+1} </h1>`
+    value.style.color = 'purple'
+    value.style.fontWeight = 'bold'
+    value.style.border = '1px solid gray'    
+    value.style.padding = '10px 150px'
+    value.style.margin = '12px'
+
+
+ })
+</script>
+</html>

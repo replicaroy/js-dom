@@ -5,56 +5,132 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        body{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            height: 100vh;
-        }
+     
     </style>
 </head>
 <body>
-    <!-- Qs.1  Create a H2 heading element with text - “Hello JavaScript”. And this “from Jaipur
-    police” to this text using JS. Output:-Hello JavaScript from Jaipur police// -->
+<div class="emp_table">
 
-    <h1 class="h1">'Hello Javascript</h1>
-
-
-
-    <!-- Qs.2 Create 3 divs with common class name - “box”.Access them & add some unique text to Each of them.
-    Output: -unique text box1 
-    Output: -unique text box2 
-    Output: -unique text box3    -->
-
-    <div class="box"></div>
-    <div class="box"></div>
-    <div class="box"></div>
-    
+</div>
     
 </body>
-
 <script>
-    // Ans. 1//
-    let value = document.querySelector(".h1")   
-    value.innerHTML += ` from jaipur police'`
-    value.style.color = 'darkgreen'
-    value.style.border = '1px solid gray'    
-    value.style.padding = '20px'
 
-    //Ans. 2// 
+let emp_table = document.querySelector(".emp_table");
+let table = document.createElement("table");
 
-    let value1 = document.querySelectorAll(".box")
-    // let names = 'john'
-    let d = value1.forEach(function(value, index){
-    value.innerHTML = ` <h1> unique text box ${index+1} </h1>`
-    value.style.color = 'purple'
-    value.style.fontWeight = 'bold'
-    value.style.border = '1px solid gray'    
-    value.style.padding = '10px 150px'
-    value.style.margin = '12px'
+// thead/////////////////
+let thead = document.createElement('thead');
+let td1 = document.createElement('td');
+td1.style.padding = '20px';
+td1.innerText = 'Sr.No.';
+let td2 = document.createElement('td');
+td2.innerText = 'Name';
+let td3 = document.createElement('td');
+td3.innerText = 'Mobile No.';
+let td4 = document.createElement('td');
+td4.innerText = 'City';
+let td5 = document.createElement('td');
+td5.innerText = 'Status';
+let tr = document.createElement('tr');
+tr.style.padding = '20px'; // Adjust padding as needed
+tr.append(td1, td2, td3, td4, td5);
+thead.append(tr);
+table.append(thead);
+
+// tbody1/////////////////
+let tbody1 = document.createElement('tbody');
+let td6 = document.createElement('td');
+td6.innerText = '1';
+td6.style.padding = '20px';
+let td7 = document.createElement('td');
+td7.innerText = 'Aman kumar';
+let td8 = document.createElement('td');
+td8.innerText = '000000000.';
+let td9 = document.createElement('td');
+td9.innerText = 'Jaipur';
+let td10 = document.createElement('td');
+td10.innerText = 'Completed';
+td10.style.background = 'green';
+let tr1 = document.createElement('tr');
+tr1.append(td6, td7, td8, td9, td10);
+tbody1.append(tr1);
+table.append(tbody1);
+
+// tbody2/////////////////
+let tbody2 = document.createElement('tbody');
+let td11 = document.createElement('td');
+td11.innerText = '2';
+td11.style.padding = '20px';
+let td12 = document.createElement('td');
+td12.innerText = 'sohan kumar';
+let td13 = document.createElement('td');
+td13.innerText = '000000000.';
+let td14 = document.createElement('td');
+td14.innerText = 'Lucknow';
+let td15 = document.createElement('td');
+td15.innerText = 'Incompleted';
+td15.style.background = 'red';
+let tr2 = document.createElement('tr');
+tr2.append(td11, td12, td13, td14, td15);
+tbody2.append(tr2);
+table.append(tbody2);
+
+// tbody3/////////////////
+let tbody3 = document.createElement('tbody');
+let td16 = document.createElement('td');
+td16.innerText = '3';
+td16.style.padding = '20px';
+let td17 = document.createElement('td');
+td17.innerText = 'Ram singh';
+let td18 = document.createElement('td');
+td18.innerText = '0000000000';
+let td19 = document.createElement('td');
+td19.innerText = 'Delhi';
+let td20 = document.createElement('td');
+td20.innerText = 'Pending';
+td20.style.background = 'yellow';
+let tr3 = document.createElement('tr');
+tr3.append(td16, td17, td18, td19, td20);
+tbody3.append(tr3);
+table.append(tbody3);
+
+// tbody4/////////////////
+let tbody4 = document.createElement('tbody');
+let td21 = document.createElement('td');
+td21.innerText = '3';
+td21.style.padding = '20px';
+let td22 = document.createElement('td');
+td22.innerText = 'Monika';
+let td23 = document.createElement('td');
+td23.innerText = '0000000000';
+let td24 = document.createElement('td');
+td24.innerText = 'Bengluru';
+let td25 = document.createElement('td');
+td25.innerText = 'Pending';
+td25.style.background = 'yellow';
+let tr4 = document.createElement('tr');
+tr4.append(td21, td22, td23, td24, td25);
+tbody4.append(tr4);
+table.append(tbody4);
+
+emp_table.append(table);
+
+// emp_table.append(table);
+
+table.border = '1px'
+table.style.margin = '100px auto'
+table.style.width = '60%'
+table.style.textAlign = 'center'
+tbody1.style.padding = "20px"
 
 
- })
+
+
+
+
+
+
+
 </script>
 </html>

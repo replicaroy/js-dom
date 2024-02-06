@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0; padding: 0; box-sizing: border-box; 
+    }
+    body{
+        width: 100%;
+        height: 100%;
+        padding: 50px auto; 
+        display: flex; 
+        flex-direction: column;
+        text-align: center;
+    }
+    .emp_table{
+        display: grid;
+        justify-content: center;
+        grid-template-columns: repeat(auto-fit, minmax(350px, auto));
+        place-items: center;
+        margin-top: 100px;
+        text-align: center;
+        gap: 50px;
+        box-direction: 1px solid;
+       
+    }
+    .userdetails{
+        position: relative;
+        width: 350px; padding: 20px; box-shadow: 0 0 10px gray; text-align: center;
+    }
+   .userdetails h2{
+        color: rgb(5, 70, 67);
+        padding-bottom: 10px;
+       
+   }
+   .userdetails p{ 
+        text-align: left;
+        padding-left: 20px;
+        margin-top: 10px;   
+        font-size: 17px;  
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+   }
+   span{
+    position: absolute; top: 0;
+    right: 0;
+    padding: 10px 20px 0 0; 
+    font-weight: bolder;
+    color: rgb(20, 133, 135);  
+   }
+   form{  
+    display: flex;
+    flex-direction: column; 
+    /* margin: 20px; */
+    padding: 20px;
+    margin: auto;
+    border-radius: 8px;
+    width: 500px;
+    background: linear-gradient(45deg, rgb(209, 124, 139), rgb(135, 197, 222));
+   }
+   label{
+    display: inline-block;
+    width: 80px;
+    color: rgb(17, 16, 16);
+   }
+   input{    
+    padding: 10px;
+   display: block;
+   width: 100%;
+    border: none;    
+   }
+   input:focus{
+    outline: none;
+   }
+   button{
+    display: block;
+    padding: 10px 50px; outline: none; background: teal; color: white;
+    margin: auto;
+    border: none;
+   }
+</style>
+<body>
+        <form  >
+            <label for="">NAME</label>
+            <input type="text" name="name" placeholder="name"> <br> <br>
+            <label for="">EMAIL</label>
+            <input type="email" name="email" placeholder="email"> <br> <br>
+            <label for="">PHONE</label>
+            <input type="number" name="number" placeholder="number"> <br> <br>
+            <label for="">CITY</label>
+            <input type="text" name="city" placeholder="city"> <br> <br>        
+            <button>Click</button>
+        </form>
+   
+        
+   
+        <div class="emp_table">
+           
+        </div>
+    
+    <script>
+        let arr = JSON.parse(localStorage.getItem('data')) || []
+
+        // let arr = [];
+        let form = document.querySelector('form')
+        form.addEventListener('submit', (e)=>{ 
+            
+            let obj = {
+             name : event.target.name.value,
+             email : event.target.email.value,
+             phone : event.target.number.value,
+             city : event.target.city.value  
+            }  
+            arr.push(obj)
+            getData(arr)
+            localStorage.setItem('data',JSON.stringify(arr))
+            
+            e.preventDefault()
+            form.reset() 
+            
+            
+
+
+
+            
+        })
+
+        let container = document.querySelector('.emp_table')
+       
+        function getData(data){ 
+            container.innerHTML = '';
+            data.map((item, i)=>{
+            let fineldata =    `
+            <div class="userdetails">
+                <h2>USER DATA</h2>
+                <span>X</span>
+                <p>Name   : &nbsp;&nbsp; &nbsp;${item.name}</p>
+                <p>Email&nbsp;  : &nbsp;&nbsp;&nbsp;${item.email}</p>
+                <p>Phone  : &nbsp;&nbsp;&nbsp;${item.phone}</p>
+                <p>City &nbsp;&nbsp; :&nbsp;&nbsp;&nbsp; ${item.city}</p>
+           </div>`
+            container.innerHTML += fineldata; 
+            })      
+                
+        }
+getData(arr)
+    
+
+
+
+
+
+ 
+     
+      
+        
+
+    </script>
+ 
+    <!-- <script src="app.js"></script> -->
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ m

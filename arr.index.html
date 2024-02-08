@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+
+    <script>
+
+        let arr = [
+            {name:'ramu', age: 37 },
+            {name:'shyam', age: 38 },
+            {name:'sandeep', age: 42 },
+            {name:'ramu', age: 37 },
+        ]
+        console.log(arr);
+        localStorage.setItem('data', JSON.stringify(arr))
+        let userdata = JSON.parse(localStorage.getItem('data'))        
+        userdata.map((item,i)=>{
+            if(userdata[i].name ==  'ramu') userdata[i].name =  'sohan'
+            localStorage.setItem('data', JSON.stringify(userdata))
+        })
+        console.log(userdata);
+
+        
+
+    </script>
+    
+</body>
+</html>

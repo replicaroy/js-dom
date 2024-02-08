@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<style>
-    *{
+  </head>
+
+  <style>
+     *{
         margin: 0; padding: 0; box-sizing: border-box; 
     }
     body{
@@ -80,66 +81,58 @@
     margin: auto;
     border: none;
    }
-</style>
-<body>
-   
-      <br> <br>
-    <div><button><a href="login.html" style="color: white; text-decoration: none; font-weight: bolder;">Go-to-Sign in Page</a></button> </div> <br> <br> 
-        <form  >
-            <label for="">NAME</label>
-            <input type="text" name="name" placeholder="name"> <br> <br>
-            <label for="">EMAIL</label>
-            <input type="email" name="email" placeholder="email"> <br> <br>
-            <label for="">PHONE</label>
-            <input type="number" name="number" placeholder="number"> <br> <br>
-            <label for="">CITY</label>
-            <input type="text" name="city" placeholder="city"> <br> <br>        
-            <button>Click</button>
-        </form>       
-   
-        <div class="emp_table">
-           <table class="table">
-            <tr>
-                <th>Sr. No.</th>
-                <th>Name</th>
-                <th>Email</th>
-                <th>Phone</th>
-                <th>City</th>
-            </tr>
-           </table>
-        </div> <br> <br>
+  </style>
+  <body>
+    <form>
+      <label for="">NAME</label>
+      <input type="text" name="name" placeholder="name" /> <br />
+      <br />
+      <label for="">EMAIL</label>
+      <input type="email" name="email" placeholder="email" /> <br />
+      <br />
+      <label for="">PHONE</label>
+      <input type="number" name="number" placeholder="number" /> <br />
+      <br />
+      <label for="">CITY</label>
+      <input type="text" name="city" placeholder="city" /> <br />
+      <br />
+      <button>Click</button>
+    </form>
 
-    
-    
+    <div class="emp_table">
+      <table class="table">
+        <tr>
+          <th>Sr. No.</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Phone</th>
+          <th>City</th>
+        </tr>
+      </table>
+    </div>
+
     <script>
-        let arr = JSON.parse(localStorage.getItem('data')) || []
-       
-      
-        let form = document.querySelector('form')
-        form.addEventListener('submit', (e)=>{                   
-            let obj = {
-                name : event.target.name.value,
-                email : event.target.email.value,
-                phone : event.target.number.value,
-                city : event.target.city.value              
-            }             
-            
-            if(obj.name == '') alert('name required')             
-            else if(obj.email == '') alert('email required')
-        else if(obj.phone == '') alert('phone required') 
-    else if(obj.city == '') alert('city required')     
-else{    
+      let form = document.querySelector("form");
+      form.addEventListener("submit", (e) => {
+        // let name = document.querySelector('#name')
+        let name = e.target.name.value;
+        let email = e.target.email.value;
+        let phone = e.target.number.value;
+        let city = e.target.city.value;
 
-    arr.push(obj)
-    form.reset()
-}
+        console.log(name, email, phone, city);
 
-getData(arr)
-localStorage.setItem('data',JSON.stringify(arr))                 
-e.preventDefault()           
-})
+        let arr = JSON.parse( localStorage.getItem('userdata')) || [];
 
-        let container = document.querySelector('.emp_table')       
+        let obj = {
+            name, email, phone, city            
+        }
+       arr.push(obj)
+       localStorage.setItem('userdata' ,JSON.stringify(arr))
+       e.preventDefault();
+      });
+
+      let container = document.querySelector('.emp_table')       
         function getData(data){ 
        
             container.innerHTML = '';            
@@ -157,66 +150,9 @@ e.preventDefault()
             })                           
         }
 getData(arr)
+ 
 
-function remove(i){
-     arr.splice(i,1)
-    localStorage.setItem('data',JSON.stringify(arr))  
-    getData(arr)
-}
 
-</script> 
-</body>
+    </script>
+  </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>REgister</title>
 </head>
 <style>
     *{
@@ -54,7 +54,6 @@
    form{  
     display: flex;
     flex-direction: column; 
-    /* margin: 20px; */
     padding: 20px;
     margin: auto;
     border-radius: 8px;
@@ -83,6 +82,11 @@
    }
 </style>
 <body>
+</style>     <div><button><a href="localstorage.html" style="color: white; text-decoration: none; font-weight: bolder;">Go-to-Home in Page</a></button> </div> <br> <br> 
+
+<div><button style="padding: 10px;"><a href="localstorage.html " style="color: white; text-decoration: none; font-weight: bolder;">SignUp Now</a></button> </div>
+<br> <br>
+
         <form  >
             <label for="">NAME</label>
             <input type="text" name="name" placeholder="name"> <br> <br>
@@ -92,75 +96,12 @@
             <input type="number" name="number" placeholder="number"> <br> <br>
             <label for="">CITY</label>
             <input type="text" name="city" placeholder="city"> <br> <br>        
-            <button>Click</button>
-        </form>
-   
-        
+            <button>SignUp Now</button>
+        </form>       
    
         <div class="emp_table">
-           
+    
         </div>
-    
-    <script>
-        let arr = JSON.parse(localStorage.getItem('data')) || []
-
-        // let arr = [];
-        let form = document.querySelector('form')
-        form.addEventListener('submit', (e)=>{ 
-            
-            let obj = {
-             name : event.target.name.value,
-             email : event.target.email.value,
-             phone : event.target.number.value,
-             city : event.target.city.value  
-            }  
-            arr.push(obj)
-            getData(arr)
-            localStorage.setItem('data',JSON.stringify(arr))
-            
-            e.preventDefault()
-            form.reset() 
-            
-            
-
-
-
-            
-        })
-
-        let container = document.querySelector('.emp_table')
-       
-        function getData(data){ 
-            container.innerHTML = '';
-            data.map((item, i)=>{
-            let fineldata =    `
-            <div class="userdetails">
-                <h2>USER DATA</h2>
-                <span>X</span>
-                <p>Name   : &nbsp;&nbsp; &nbsp;${item.name}</p>
-                <p>Email&nbsp;  : &nbsp;&nbsp;&nbsp;${item.email}</p>
-                <p>Phone  : &nbsp;&nbsp;&nbsp;${item.phone}</p>
-                <p>City &nbsp;&nbsp; :&nbsp;&nbsp;&nbsp; ${item.city}</p>
-           </div>`
-            container.innerHTML += fineldata; 
-            })      
-                
-        }
-getData(arr)
-    
-
-
-
-
-
- 
-     
-      
-        
-
-    </script>
- 
-    <!-- <script src="app.js"></script> -->
 </body>
 </html>
 
@@ -192,4 +133,32 @@ getData(arr)
 
 
 
- m
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- // function remove(i){
+//     arr.splice(i,1)
+//     localStorage.setItem('data',JSON.stringify(arr))  
+//     getData(arr)
+// } -->
